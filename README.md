@@ -13,7 +13,7 @@ It allows you to explore:
 | Use    | Useless     |
 
 ### Screenshots:
-![Master page](https://github.com/annahdigital/StarrySkyProject/blob/master/LGFXHawwagk.jpg)
+![Master page](https://github.com/annahdigital/StarrySkyProject/blob/master/rsz_dtxw2lk8xji.jpg)
 ![Detail page example](https://github.com/annahdigital/StarrySkyProject/blob/master/dtXW2Lk8XjI.jpg)
 
 ### Total:
