@@ -13,7 +13,8 @@ It allows you to explore:
 | Use    | Useless     |
 
 ### Screenshots:
-
+![Master page](https://github.com/annahdigital/StarrySkyProject/blob/master/LGFXHawwagk.jpg)
+![Detail page example](https://github.com/annahdigital/StarrySkyProject/blob/master/dtXW2Lk8XjI.jpg)
 
 ### Total:
 - [x] i got some practice while doing it
