@@ -1,4 +1,4 @@
-# StarrySkyProject
+# StarrySkyProject (semester 3, 2018)
 The StarrySkyProject is ~~kinda~~ educational cross-platform app that allows you to widen your knowledge about space objects.
 It allows you to explore:
 - Stars
