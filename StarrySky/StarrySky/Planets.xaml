@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarrySky.Planets"
+             xmlns:local="clr-namespace:StarrySky"
+             Title="Planets">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchIt" Placeholder="Enter the name." TextChanged="SearchBar_TextChanged"  HeightRequest="40"/>
+            <Button x:Name="OptButton" Text="Options" Clicked="OptButton_Clicked"/>
+            <ListView ItemsSource="{Binding PlanetsCollection}" HasUnevenRows="True"
+                      x:Name="PlanetList"
+                      SelectedItem="{Binding SelectedPlanet, Mode=TwoWay}"
+                      ItemSelected="PlanetList_ItemSelected" ItemTapped="PlanetList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Delete_Clicked"  CommandParameter="{Binding SelectedConstellation}"
+                                      Text="{x:Static local:CurrentData.DelIt}" IsDestructive="True" />
+                                <MenuItem Clicked="Edit_Clicked"  CommandParameter="{Binding SelectedConstellation}"
+                                      Text="{x:Static local:CurrentData.EditIt}" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <StackLayout HeightRequest="250" Padding="10">
+                                <Label Text="{Binding Name}" Style="{StaticResource BigLabel}"/>
+                                <Image x:Name="planetImage" Source="venus.png" HeightRequest="100" HorizontalOptions="Center"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" HorizontalOptions="End">
+                                        <Label Text="{x:Static local:CurrentData.Radius}" />
+                                        <Label Text="{x:Static local:CurrentData.Mass}"/>
+                                        <Label Text="{x:Static local:CurrentData.OrbitalPeriod}"/>
+                                        <Label Text="{x:Static local:CurrentData.StarPeriod}"/>
+                                        <Label Text="{x:Static local:CurrentData.OrbitalRadius}"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <Label Text="{Binding Radius}" Style="{StaticResource UsualLabelSoft}"/>
+                                        <Label Text="{Binding Mass}" Style="{StaticResource UsualLabelSoft}"/>
+                                        <Label Text="{Binding OrbitalPeriod}" Style="{StaticResource UsualLabelSoft}"/>
+                                        <Label Text="{Binding StarPeriod}" Style="{StaticResource UsualLabelSoft}"/>
+                                        <Label Text="{Binding OrbitalRadius}" Style="{StaticResource UsualLabelSoft}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="AddPlanet" Text ="Add" Clicked="AddPlanet_Clicked" Style="{StaticResource RoundButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

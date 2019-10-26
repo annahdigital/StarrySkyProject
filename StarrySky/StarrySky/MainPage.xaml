@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StarrySky"
+             x:Class="StarrySky.MainPage"
+             MasterBehavior="Popover">
+
+    <MasterDetailPage.Master>
+        <ContentPage BackgroundColor="Thistle"  Title="Master">
+            <ContentPage.Content>
+                <StackLayout Padding="10">
+                    <Image x:Name ="MilkyWay" Source="milkyway.png" HeightRequest="200"/>
+                    <TableView BackgroundColor="Transparent" Intent="Menu">
+                    <TableRoot>
+                            <TableSection x:Name="Nammee" Title="Start">
+                            <ViewCell Tapped ="ViewCell_Tapped">
+                                <StackLayout Orientation="Horizontal">
+                                     <Image Source="astronaut.png"/>
+                                        <Label x:Name="Mnmn" Text="{x:DynamicResource MainMenu}" VerticalOptions="CenterAndExpand"/>                                  
+                                </StackLayout>
+                            </ViewCell>
+                            </TableSection>
+                            <TableSection  x:Name="xplore" Title="Explore your StarrySky!">
+                                <ViewCell Tapped="ViewCell_Tapped_1">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="constellation.png"/>
+                                        <Label  x:Name="consts"  Text="{x:DynamicResource Constsss}" VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="ViewCell_Tapped_2">
+                                <StackLayout Orientation="Horizontal"> 
+                                    <Image Source="stars.png"/>
+                                        <Label  x:Name="strss"  Text ="{x:DynamicResource Starsss}" VerticalOptions="CenterAndExpand"/>                                 
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="ViewCell_Tapped_3">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="venus.png"/>
+                                        <Label  x:Name="plntss" Text="{x:DynamicResource Planetssss}" VerticalOptions="CenterAndExpand"/>                                 
+                                </StackLayout>
+                            </ViewCell>
+                            </TableSection>
+                            <TableSection  x:Name="opts"  Title="Options">
+                                <ViewCell Tapped="ViewCell_Tapped_4">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="satellite.png"/>
+                                        <Label   x:Name="setts" Text="{x:DynamicResource Setsss}" VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content Title="Detail">
+                <StackLayout>
+                    <Label Text=" Detail page"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+
+</MasterDetailPage>

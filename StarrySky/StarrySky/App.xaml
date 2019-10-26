@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarrySky.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#795e84" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="UsualLabelSoft" TargetType="Label">
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="BigLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="Thistle"/>
+            </Style>
+            <Style x:Key="RoundButton" TargetType="Button">
+                <Setter Property="CornerRadius" Value="100"/>
+                <Setter Property="BackgroundColor" Value="PaleVioletRed"/>
+                <Setter Property="WidthRequest" Value="55"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            
+            <x:String x:Key="Starsss">Stars</x:String>
+            <x:String x:Key="Planetssss">Planets</x:String>
+            <x:String x:Key="Constsss">Constellations</x:String>
+            <x:String x:Key="MainMenu">Main menu</x:String>
+            <x:String x:Key="Setsss">Settings</x:String>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

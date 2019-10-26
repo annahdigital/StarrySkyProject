@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarrySky.AddingConst"
+             Title="Adding constellation">
+    <ContentPage.Content>
+        <StackLayout x:Name="ConstStack" Padding="10">
+            <Image x:Name="constImage" Source="constellation.png" HeightRequest="150" HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label x:Name="NameLabel" Text="Name:" Grid.Column="0" Grid.Row="0" VerticalOptions="End"/>
+                <Label x:Name="RAFLabel" Text="Right ascension: from" Grid.Column="0" Grid.Row="1" VerticalOptions="End"/>
+                <Label x:Name="RATLabel" Text="Right ascension: to" Grid.Column="0" Grid.Row="2" VerticalOptions="End"/>
+                <Label x:Name="DFLabel" Text="Declination: from" Grid.Column="0" Grid.Row="3" VerticalOptions="End"/>
+                <Label x:Name="DTLabel" Text="Declination: to" Grid.Column="0" Grid.Row="4" VerticalOptions="End"/>
+                <Entry x:Name="NameEntry" ReturnType="Next" Placeholder="Name" Grid.Column="1" Grid.Row="0"/>
+                <Entry  x:Name="RAFEntry" ReturnType="Next" Placeholder="Right ascension: from" Grid.Column="1" Grid.Row="1"/>
+                <Entry  x:Name="RATEntry" ReturnType="Next" Placeholder="Right ascension: to" Grid.Column="1" Grid.Row="2"/>
+                <Entry  x:Name="DFEntry" ReturnType="Next" Placeholder="Declination: from" Grid.Column="1" Grid.Row="3"/>
+                <Entry  x:Name="DTEntry" ReturnType="Done" Placeholder="Declination: to" Grid.Column="1" Grid.Row="4"/>
+            </Grid>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button x:Name="Add" HorizontalOptions="StartAndExpand" Style="{StaticResource RoundButton}" Text="Add" Clicked="Add_Clicked"/>
+                <Button x:Name="Cancel" HorizontalOptions="EndAndExpand" Style="{StaticResource RoundButton}" Text="Can cel" FontSize="Micro" 
+                        Clicked="Cancel_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

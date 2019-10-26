@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarrySky.Constellations"
+             xmlns:local="clr-namespace:StarrySky"
+             Title="Constellations">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchIt" Placeholder="Enter the name." TextChanged="SearchIt_TextChanged"  HeightRequest="40" />
+            <Button x:Name="OptButton" Text="Options" VerticalOptions="FillAndExpand" Clicked="OptButton_Clicked"  BackgroundColor="Thistle"/>
+            <ListView x:Name="ConstList" ItemsSource="{Binding ConstellationsCollection}" HasUnevenRows="True"
+                      SelectedItem="{Binding SelectedConstellation, Mode=TwoWay}"
+                      ItemSelected="ListView_ItemSelected" ItemTapped="ConstList_ItemTapped"> 
+                <ListView.ItemTemplate>
+                    <DataTemplate> 
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Delete_Clicked"  CommandParameter="{Binding SelectedConstellation}"
+                                      Text="{x:Static local:CurrentData.DelIt}" IsDestructive="True" />
+                                <MenuItem Clicked="Edit_Clicked"  CommandParameter="{Binding SelectedConstellation}"
+                                      Text="{x:Static local:CurrentData.EditIt}" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                                <StackLayout HeightRequest="250" Padding="10">
+                                <Label Text="{Binding Name}" Style="{StaticResource BigLabel}"/>
+                                <Image x:Name="constImage" Source="constellation.png" HeightRequest="100" HorizontalOptions="Center"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" HorizontalOptions="End">
+                                        <Label x:Name="RAF" Text="{x:Static local:CurrentData.RAF}"/>
+                                        <Label x:Name="RAT"  Text="{x:Static local:CurrentData.RAT}"  />
+                                        <Label x:Name="DF"  Text="{x:Static local:CurrentData.DF}" />
+                                        <Label x:Name="DT"  Text="{x:Static local:CurrentData.DT}" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1">
+                                        <Label Text="{Binding RightAscensionFirst}" Style="{StaticResource UsualLabelSoft}"/>
+                                        <Label Text="{Binding RightAscensionLast}" Style="{StaticResource UsualLabelSoft}" />
+                                        <Label Text="{Binding DeclinationFirst}"  Style="{StaticResource UsualLabelSoft}"/>
+                                        <Label Text="{Binding DeclinationLast}"  Style="{StaticResource UsualLabelSoft}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="AddConst" Text ="Add" Clicked="AddConst_Clicked" Style="{StaticResource RoundButton}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

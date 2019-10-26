@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarrySky.MainMenu"
+             Title="Main menu">
+    <ContentPage.Content>
+        <StackLayout x:Name="AnimatedStack">
+            <TableView BackgroundColor="Transparent" Intent="Menu" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell Tapped ="ViewCell_Tapped" Height="170">
+                        <StackLayout Padding="10" >
+                                <Image x:Name="constImage" Source="constellation.png" VerticalOptions="FillAndExpand"/>
+                            <Label x:Name ="Cst" Text="Constellations" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                        <ViewCell Tapped ="ViewCell_Tapped_1" Height="170">
+                     <StackLayout Padding="10">
+                                <Image x:Name="starImage" Source="stars.png"  VerticalOptions="FillAndExpand"/>
+                                <Label x:Name ="Strs"  Text="Stars" HorizontalOptions="Center"/>
+                        </StackLayout>
+                  </ViewCell>
+                </TableSection>
+                <TableSection>
+                        <ViewCell Tapped ="ViewCell_Tapped_2" Height="170">
+                        <StackLayout Padding="10">
+                                <Image x:Name="planetImage" Source="venus.png" VerticalOptions="FillAndExpand"/>
+                                <Label  x:Name ="Plnts" Text="Planets" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

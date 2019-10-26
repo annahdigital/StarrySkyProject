@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StarrySky.AddingPlanets"
+             Title="Adding planet">
+    <ContentPage.Content>
+        <StackLayout x:Name="PlanetStack" Padding="10">
+            <Image x:Name="planetImage" Source="venus.png" HeightRequest="150" HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label x:Name="NameLabel" Text="Name:" Grid.Column="0" Grid.Row="0" VerticalOptions="End"/>
+                <Label x:Name="RLabel" Text="Radius:" Grid.Column="0" Grid.Row="1" VerticalOptions="End"/>
+                <Label x:Name="MLabel" Text="Mass:" Grid.Column="0" Grid.Row="2" VerticalOptions="End"/>
+                <Label x:Name="OPLabel" Text="Orbital period:" Grid.Column="0" Grid.Row="3" VerticalOptions="End"/>
+                <Label x:Name="SPLabel" Text="Star period:" Grid.Column="0" Grid.Row="4" VerticalOptions="End"/>
+                <Label x:Name="ORLabel" Text="Orbital radius:" Grid.Column="0" Grid.Row="5" VerticalOptions="End"/>
+                <Entry x:Name="NameEntry" ReturnType="Next" Placeholder="Name" Grid.Column="1" Grid.Row="0"/>
+                <Entry  x:Name="REntry" ReturnType="Next" Placeholder="Radius" Grid.Column="1" Grid.Row="1" Keyboard="Numeric"/>
+                <Entry  x:Name="MEntry" ReturnType="Next" Placeholder="Mass" Grid.Column="1" Grid.Row="2" Keyboard="Numeric"/>
+                <Entry  x:Name="OPEntry" ReturnType="Next" Placeholder="Orbital period" Grid.Column="1" Grid.Row="3" Keyboard="Numeric"/>
+                <Entry  x:Name="SPEntry" ReturnType="Next" Placeholder="Star period" Grid.Column="1" Grid.Row="4" Keyboard="Numeric"/>
+                <Entry  x:Name="OREntry" ReturnType="Done" Placeholder="Orbital radius" Grid.Column="1" Grid.Row="5" Keyboard="Numeric"/>
+            </Grid>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button x:Name="Add" HorizontalOptions="StartAndExpand" Style="{StaticResource RoundButton}" Text="Add" Clicked="Add_Clicked"/>
+                <Button x:Name="Cancel" HorizontalOptions="EndAndExpand" Style="{StaticResource RoundButton}" Text="Can cel" FontSize="Micro" 
+                        Clicked="Cancel_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
